@@ -19,7 +19,7 @@ namespace RazorPagesMoviesDemo.Pages.Movies
             _context = context;
         }
 
-        public Moive Moive { get; set; }
+        public Movie Movie { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -28,9 +28,9 @@ namespace RazorPagesMoviesDemo.Pages.Movies
                 return NotFound();
             }
 
-            Moive = await _context.Moive.FirstOrDefaultAsync(m => m.ID == id);
+            Movie = await _context.Moive.FirstOrDefaultAsync(m => m.ID == id);
 
-            if (Moive == null)
+            if (Movie == null)
             {
                 return NotFound();
             }

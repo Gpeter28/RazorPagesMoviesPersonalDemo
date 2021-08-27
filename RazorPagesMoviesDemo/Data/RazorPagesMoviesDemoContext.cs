@@ -14,6 +14,6 @@ namespace RazorPagesMoviesDemo.Data
         {
         }
 
-        public DbSet<RazorPagesMoviesDemo.Models.Moive> Moive { get; set; }
+        public DbSet<RazorPagesMoviesDemo.Models.Movie> Moive { get; set; }
     }
 }

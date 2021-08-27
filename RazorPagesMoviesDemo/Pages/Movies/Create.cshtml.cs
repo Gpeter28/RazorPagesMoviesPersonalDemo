@@ -25,7 +25,7 @@ namespace RazorPagesMoviesDemo.Pages.Movies
         }
 
         [BindProperty]
-        public Moive Moive { get; set; }
+        public Movie Movie { get; set; }
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
@@ -35,7 +35,7 @@ namespace RazorPagesMoviesDemo.Pages.Movies
                 return Page();
             }
 
-            _context.Moive.Add(Moive);
+            _context.Moive.Add(Movie);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

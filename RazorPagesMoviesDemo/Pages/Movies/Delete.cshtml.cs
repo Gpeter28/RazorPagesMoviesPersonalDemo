@@ -20,7 +20,7 @@ namespace RazorPagesMoviesDemo.Pages.Movies
         }
 
         [BindProperty]
-        public Moive Moive { get; set; }
+        public Movie Movie { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -29,9 +29,9 @@ namespace RazorPagesMoviesDemo.Pages.Movies
                 return NotFound();
             }
 
-            Moive = await _context.Moive.FirstOrDefaultAsync(m => m.ID == id);
+            Movie = await _context.Moive.FirstOrDefaultAsync(m => m.ID == id);
 
-            if (Moive == null)
+            if (Movie == null)
             {
                 return NotFound();
             }
@@ -45,11 +45,11 @@ namespace RazorPagesMoviesDemo.Pages.Movies
                 return NotFound();
             }
 
-            Moive = await _context.Moive.FindAsync(id);
+            Movie = await _context.Moive.FindAsync(id);
 
-            if (Moive != null)
+            if (Movie != null)
             {
-                _context.Moive.Remove(Moive);
+                _context.Moive.Remove(Movie);
                 await _context.SaveChangesAsync();
             }
 

@@ -1,4 +1,10 @@
 ﻿@page
+
+@*
+    @page "{searchString?}"  =>    /Movies/Ghost
+                                == Movies?searchString=Ghost
+    
+    *@
 @model RazorPagesMoviesDemo.Pages.Movies.IndexModel
 
 @{
@@ -10,6 +16,19 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
+
+<form>
+    <p>
+        <select asp-for="MovieGenre" asp-items="Model.Genres">
+            <option value="">ALL</option>
+        </select>
+
+        Title: <input type="text" asp-for="SearchString"/>
+        <input type="submit" value="Filter"/>
+    </p>
+</form>
+
+
 <table class="table">
     <thead>
         <tr>

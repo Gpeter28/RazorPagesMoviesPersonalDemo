@@ -21,7 +21,7 @@ namespace RazorPagesMoviesDemo.Pages.Movies
         }
 
         [BindProperty]
-        public Moive Moive { get; set; }
+        public Movie Movie { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -30,9 +30,9 @@ namespace RazorPagesMoviesDemo.Pages.Movies
                 return NotFound();
             }
 
-            Moive = await _context.Moive.FirstOrDefaultAsync(m => m.ID == id);
+            Movie = await _context.Moive.FirstOrDefaultAsync(m => m.ID == id);
 
-            if (Moive == null)
+            if (Movie == null)
             {
                 return NotFound();
             }
@@ -48,7 +48,7 @@ namespace RazorPagesMoviesDemo.Pages.Movies
                 return Page();
             }
 
-            _context.Attach(Moive).State = EntityState.Modified;
+            _context.Attach(Movie).State = EntityState.Modified;
 
             try
             {
@@ -56,7 +56,7 @@ namespace RazorPagesMoviesDemo.Pages.Movies
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!MoiveExists(Moive.ID))
+                if (!MoiveExists(Movie.ID))
                 {
                     return NotFound();
                 }

@@ -8,7 +8,7 @@ namespace RazorPagesMoviesDemo.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Moive",
+                name: "Movie",
                 columns: table => new
                 {
                     ID = table.Column<int>(type: "int", nullable: false)
@@ -27,7 +27,7 @@ namespace RazorPagesMoviesDemo.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Moive");
+                name: "Movie");
         }
     }
 }

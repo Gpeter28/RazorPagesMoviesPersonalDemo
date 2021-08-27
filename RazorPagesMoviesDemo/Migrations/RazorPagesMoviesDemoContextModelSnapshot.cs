@@ -19,7 +19,7 @@ namespace RazorPagesMoviesDemo.Migrations
                 .HasAnnotation("ProductVersion", "5.0.8")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("RazorPagesMoviesDemo.Models.Moive", b =>
+            modelBuilder.Entity("RazorPagesMoviesDemo.Models.Movie", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -40,7 +40,7 @@ namespace RazorPagesMoviesDemo.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Moive");
+                    b.ToTable("Movie");
                 });
 #pragma warning restore 612, 618
         }
