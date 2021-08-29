@@ -17,9 +17,9 @@ namespace RazorPagesMoviesDemo.Models
                     DbContextOptions<RazorPagesMoviesDemoContext>>());
 
             // If there are any movies in the database, the seed initializer returns and no movies are added.
-            if (context.Moive.Any()) return;
+            if (context.Movie.Any()) return;
 
-            context.Moive.AddRange(
+            context.Movie.AddRange(
                 new Movie
                 {
                     Title = "When Harry Met Sally",

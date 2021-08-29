@@ -29,7 +29,7 @@ namespace RazorPagesMoviesDemo.Pages.Movies
                 return NotFound();
             }
 
-            Movie = await _context.Moive.FirstOrDefaultAsync(m => m.ID == id);
+            Movie = await _context.Movie.FirstOrDefaultAsync(m => m.ID == id);
 
             if (Movie == null)
             {
@@ -45,11 +45,11 @@ namespace RazorPagesMoviesDemo.Pages.Movies
                 return NotFound();
             }
 
-            Movie = await _context.Moive.FindAsync(id);
+            Movie = await _context.Movie.FindAsync(id);
 
             if (Movie != null)
             {
-                _context.Moive.Remove(Movie);
+                _context.Movie.Remove(Movie);
                 await _context.SaveChangesAsync();
             }
 

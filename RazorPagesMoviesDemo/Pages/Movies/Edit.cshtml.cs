@@ -30,7 +30,7 @@ namespace RazorPagesMoviesDemo.Pages.Movies
                 return NotFound();
             }
 
-            Movie = await _context.Moive.FirstOrDefaultAsync(m => m.ID == id);
+            Movie = await _context.Movie.FirstOrDefaultAsync(m => m.ID == id);
 
             if (Movie == null)
             {
@@ -71,7 +71,7 @@ namespace RazorPagesMoviesDemo.Pages.Movies
 
         private bool MoiveExists(int id)
         {
-            return _context.Moive.Any(e => e.ID == id);
+            return _context.Movie.Any(e => e.ID == id);
         }
     }
 }

@@ -28,7 +28,7 @@ namespace RazorPagesMoviesDemo.Pages.Movies
                 return NotFound();
             }
 
-            Movie = await _context.Moive.FirstOrDefaultAsync(m => m.ID == id);
+            Movie = await _context.Movie.FirstOrDefaultAsync(m => m.ID == id);
 
             if (Movie == null)
             {

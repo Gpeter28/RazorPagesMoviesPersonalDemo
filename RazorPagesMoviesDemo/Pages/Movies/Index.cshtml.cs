@@ -29,14 +29,14 @@ namespace RazorPagesMoviesDemo.Pages.Movies
         public async Task OnGetAsync()
         {
             IQueryable<string> genreQuery = 
-                from m in _context.Moive 
+                from m in _context.Movie 
                 orderby m.Genre
                 select m.Genre;
 
 
 
             var movies = 
-                from m in _context.Moive
+                from m in _context.Movie
                 select m;
 
             if (!string.IsNullOrEmpty(SearchString))
@@ -52,7 +52,7 @@ namespace RazorPagesMoviesDemo.Pages.Movies
             Genres = new SelectList(await genreQuery.Distinct().ToListAsync());
 
             Moive = await movies.ToListAsync();
-            // Moive = await _context.Moive.ToListAsync();
+            // Movie = await _context.Movie.ToListAsync();
         }
     }
 }
